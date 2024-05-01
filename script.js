@@ -11,6 +11,7 @@ function createCalculator(){
             calculatorButton.setAttribute("value",i);
             calculatorButton.textContent = i;
             calculatorButton.classList.add("word-button");
+            calculatorButton.addEventListener("click", clearScreen);
             calculatorContainer.appendChild(calculatorButton);
 
         }
@@ -90,6 +91,7 @@ function populateScreen(){
     }
     //console.log(screenContent);
 
+    // Handling the addition of the operand to the expresstion after making sure there are not other operands 
     if (operands.includes(clickedButton) && !(screenContent.split('').some(char => operands.includes(char)) && flag)){
         flag = false;
         operand = clickedButton;
@@ -98,11 +100,12 @@ function populateScreen(){
     }
 
 
-
-    if (operands.includes(clickedButton) && operands.includes(...screenContent) && flag){
+    // Handling the situation when an operand is clicked but theres already another operand on the screen
+    if (operands.includes(clickedButton) && (screenContent.split('').some(char => operands.includes(char)) && flag)){
         flag = false;
         answer = operate(operand,number1,number2);
-        calculatorScreen.textContent = 0;
+        calculatorScreen.textContent = answer;
+        number1 = answer;
         answerScreen.textContent = answer;
     }
     
@@ -124,12 +127,15 @@ function populateScreen(){
         calculatorScreen.textContent += number2;
     }
 
+    // Handling the clicking of the = button
     if(clickedButton == "=" && flag){
         flag = false;
         answer = operate(operand,number1,number2);
         answerScreen.textContent = answer;
     }
 
+
+    // Handling the clicking of the clear and delete buttons
     if(specialValues.includes(clickedButton) && flag){
         flag = false;
         if (clickedButton == "DELETE"){
@@ -144,6 +150,24 @@ function populateScreen(){
 
 
 
+}
+
+function clearScreen(){
+
+    let calculatorScreen = document.querySelector(".expression");
+    let clickedButton = this.getAttribute("value");
+
+    if (clickedButton == "DELETE"){
+        let oldText = calculatorScreen.textContent ;
+        let newText = oldText.slice(0,-1);
+        calculatorScreen.textContent = newText;
+    }
+    else if (clickedButton = "CLEAR"){
+        calculatorScreen.textContent = 0;
+    }
+
+
+    
 }
 
 
