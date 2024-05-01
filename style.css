@@ -1,0 +1,73 @@
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator{
+    margin-bottom:10px;
+    margin-top:0;
+    padding: 15px;
+    width: 350px;
+    height:530px;
+    border: 5px solid #171717;
+    border-radius: 18px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+button{
+    color: #171717;
+    background-color: #9D9D9D; 
+    border: 2px solid #171717;
+    border-radius: 7px;
+    font-weight: bolder;
+    
+}
+
+.word-button{
+    height:60px;
+    width: 117px;
+    margin: 5px;
+}
+
+.number-button{
+    box-sizing: border-box;
+    height:60px;
+    width: 75px;
+    margin: 5px;
+    
+}
+
+.screen{
+    box-sizing: border-box;
+    height:150px;
+    width:331px;
+    border: 5px solid #171717;
+    border-radius: 18px;
+}
+
+footer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: #171717;
+    flex-direction: column;
+    font-weight: bolder;
+    height:20px;
+}
