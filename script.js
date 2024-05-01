@@ -17,6 +17,7 @@ function createCalculator(){
             calculatorButton.setAttribute("value",i);
             calculatorButton.textContent = i;
             calculatorButton.classList.add("number-button");
+            calculatorButton.addEventListener("click", populateScreen);
             calculatorContainer.appendChild(calculatorButton);
         }
     }
@@ -64,6 +65,12 @@ function operate (operand, number1, number2){
     }
 
     return answer;
+}
+
+function populateScreen(){
+    let calculatorScreen = document.querySelector(".screen");
+    calculatorScreen.textContent = this.getAttribute("value");
+    console.log(calculatorScreen.textContent)
 }
 
 
