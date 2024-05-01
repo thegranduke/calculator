@@ -160,13 +160,12 @@ function clearScreen(){
     if (clickedButton == "DELETE"){
         let oldText = calculatorScreen.textContent ;
         let newText = oldText.slice(0,-1);
+        (newText == "") ? newText = 0 :undefined;
         calculatorScreen.textContent = newText;
     }
     else if (clickedButton = "CLEAR"){
         calculatorScreen.textContent = 0;
     }
-
-
     
 }
 
