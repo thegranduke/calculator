@@ -281,13 +281,14 @@ function clearScreen(){
 }
 
 function handleKeyDOwn(event){
-    
-    switch(event.key){
-        case "1":
-            calculatorButton.addEventListener("click", populateScreen);
+
+    const clickEvent = new Event("click");
+    console.log("works")
 
 
-    }
+    value = event.key;
+    let clicked = document.querySelector(`[value="${value}"]`);
+    clicked.dispatchEvent(clickEvent);
 
 }
 
@@ -295,6 +296,7 @@ function handleKeyDOwn(event){
 document.addEventListener("DOMContentLoaded", () => {
 
     createCalculator();
+    document.addEventListener("keydown",handleKeyDOwn);
 
 } );
 
