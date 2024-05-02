@@ -74,6 +74,8 @@ let operand = "";
 let number1 = "";
 let number2 = "";
 
+
+
 function populateScreen(){
 
     function screenIncludesOperand(){
@@ -233,6 +235,15 @@ function clearScreen(){
     let calculatorScreen = document.querySelector(".expression");
     let answerScreen = document.querySelector(".answers")
     let clickedButton = this.getAttribute("value");
+    let screenContent = calculatorScreen.textContent;
+
+    function screenIncludesOperand(){
+        let verdict = screenContent.split('').some(char => operands.includes(char));
+        return verdict;
+    
+    }
+
+
 
     if (clickedButton == "DELETE"){
         let oldText = calculatorScreen.textContent ;
@@ -247,6 +258,7 @@ function clearScreen(){
         }
         else if (!(number1 == "") && !(screenIncludesOperand())){
             let temp = number1.toString().slice(0,-1);
+            console.log(temp);
             number1 = +temp;
         }
 
