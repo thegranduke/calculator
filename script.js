@@ -101,7 +101,6 @@ function populateScreen(){
 
     let flag = true;
 
-    console.log(isaNumber());
     
     // Handling the case when the input is a number and theres noting else on the screen
     if (screenContent == 0 && isaNumber() && flag){
@@ -109,8 +108,8 @@ function populateScreen(){
         number1 = clickedButton;
         calculatorScreen.textContent = number1;
     }
-    // //Handling the case of an operand being entered before any other numbers 
-    // if (screenContent == 0 && isOperand() && flag){
+    // //Handling the case of an specialOperand being entered before any other numbers 
+    // if (screenContent == 0 && isSpecialOperand() && flag){
     //     flag = false;
     // }
 
@@ -118,7 +117,7 @@ function populateScreen(){
     if ( isOperand() && !(screenIncludesOperand()) &&  !(isSpecialOperand()) && flag){
         flag = false;
         operand = clickedButton;
-        
+
         if (screenContent == 0){
             (answerScreen.textContent)
             ? number1 = answerScreen.textContent
@@ -146,18 +145,19 @@ function populateScreen(){
         calculatorScreen.textContent += clickedButton;
     }
 
+
     // Handling the situation when an operand is clicked but theres already another operand on the screen and no second number
-    if (isOperand() && screenIncludesOperand() && (number2 != "") && flag){
+    if (isOperand() && screenIncludesOperand() && (number2 != "") && !(isSpecialOperand()) && flag){
         flag = false;
         answer = operate(operand,number1,number2);
+        console.log(answer);
         operand = clickedButton;
-        (isSpecialOperand()) 
-        ? calculatorScreen.textContent = 0 
-        : calculatorScreen.textContent = answer + operand;
+        calculatorScreen.textContent = answer + operand;
         number1 = answer;
         number2 = "";
+        console.log(answer);
         answerScreen.textContent = answer;
-        
+       
     }
 
     // Handling the clicking of the = button
@@ -165,20 +165,30 @@ function populateScreen(){
         flag = false;
         answer = operate(operand,number1,number2);
         answerScreen.textContent = answer;
+        calculatorScreen.textContent = 0;
+        number1 = "";
+        number2 = "";
+        
     }
 
-    // //Handling the use of the percent operater
-    // if (clickedButton == "%"){
-    //     if (includesOperand){
-    //         number2 = number2/100;
-    //         calculatorScreen.textContent += number2;
-    //     }
-    //     else if (!(number1 == "")){
-    //         number1 = number1/100;
-    //         calculatorScreen.textContent = number1;
-    //     }
+    //Handling the use of the percent operater
+    if (clickedButton == "%" && flag){
+        if (!(number2 == "")){
+            let length = number2.toString().length;
+            number2 = number2/100;
+            console.log(length);
+            calculatorScreen.textContent = calculatorScreen.textContent.slice(0,-(length));
+            console.log(calculatorScreen.textContent);
+            calculatorScreen.textContent += number2;
+        }
+        else if (!(number1 == "")){
+            number1 = number1/100;
+            console.log(number1);
+            calculatorScreen.textContent = number1;
+        }
+        
 
-    // }
+    }
 
 
 }
@@ -194,10 +204,23 @@ function clearScreen(){
         let newText = oldText.slice(0,-1);
         (newText == "") ? newText = 0 :undefined;
         calculatorScreen.textContent = newText;
+        //Updating number variables
+        if (!(number2 == "")){
+            let temp = number2.toString().slice(0,-1);
+            number2 = +temp;
+
+        }
+        else if (!(number1 == "") && !(screenIncludesOperand())){
+            let temp = number1.toString().slice(0,-1);
+            number1 = +temp;
+        }
+
     }
     else if (clickedButton = "CLEAR"){
         calculatorScreen.textContent = 0;
         answerScreen.textContent = "";
+        number1 = "";
+        number2 = "";
     }
     
 }
