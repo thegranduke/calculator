@@ -82,6 +82,12 @@ function populateScreen(){
     
     }
     
+    function includesDecimalPoint(number){
+        let verdict = number.split('').includes(".");
+        return verdict;
+
+    }
+    
     function isaNumber(){
         return numbers.includes(clickedButton);
     }
@@ -108,10 +114,6 @@ function populateScreen(){
         number1 = clickedButton;
         calculatorScreen.textContent = number1;
     }
-    // //Handling the case of an specialOperand being entered before any other numbers 
-    // if (screenContent == 0 && isSpecialOperand() && flag){
-    //     flag = false;
-    // }
 
     // Handling the addition of the operand to the expression after making sure there are not other operands 
     if ( isOperand() && !(screenIncludesOperand()) &&  !(isSpecialOperand()) && flag){
@@ -189,6 +191,31 @@ function populateScreen(){
         
 
     }
+
+    if (clickedButton == "." && flag){
+
+        let flag1 = true;
+        if (!(screenIncludesOperand()) && includesDecimalPoint(number1)){
+            flag1 = false;
+        }
+        if(!(screenIncludesOperand()) && !(includesDecimalPoint(number1)) && (screenContent != 0) && flag1){
+            number1 += clickedButton;
+            calculatorScreen.textContent = number1;
+            flag1 = false
+
+        }
+        if((screenIncludesOperand()) && (includesDecimalPoint(number1)) && flag1){
+            flag1 = false;
+        }
+        if((screenIncludesOperand()) && !(includesDecimalPoint(number1)) && (screenContent != 0) && flag1){
+            flag1 = false;
+            number2 += clickedButton;
+            calculatorScreen.textContent += clickedButton;
+
+        }
+
+    }
+
 
 
 }
