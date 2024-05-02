@@ -28,7 +28,7 @@ function createCalculator(){
 
 function add(a,b){
     let sum = a + b;
-    return sum
+    return sum;
 }
 
 function subtract(a,b){
@@ -38,7 +38,7 @@ function subtract(a,b){
 
 function multiply(a,b){
     let product = a * b ;
-    return product;
+    return (product % 1 !== 0) ? product.toFixed(3) : product;
 }
 
 function divide(a,b){
@@ -47,7 +47,8 @@ function divide(a,b){
         return "lmao"
     }
     else{
-        return quotient;
+     
+        return (quotient % 1 != 0) ? quotient.toFixed(3) : quotient;
 
     }
     
