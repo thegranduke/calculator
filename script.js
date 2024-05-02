@@ -107,6 +107,13 @@ function populateScreen(){
 
     let flag = true;
 
+    //Ensuring that the screenContent never overflows off the designated screen area
+    console.log(calculatorScreen.textContent.length)
+    console.log(screenContent.length)
+    if (screenContent.length >= 18){
+        flag = false;
+    }
+
     
     // Handling the case when the input is a number and theres noting else on the screen
     if (screenContent == 0 && isaNumber() && flag){
@@ -163,7 +170,7 @@ function populateScreen(){
     }
 
     // Handling the clicking of the = button
-    if(clickedButton == "=" && flag){
+    if(clickedButton == "="){
         flag = false;
         answer = operate(operand,number1,number2);
         answerScreen.textContent = answer;
@@ -192,6 +199,7 @@ function populateScreen(){
 
     }
 
+    // Handling the clicking of the . button
     if (clickedButton == "." && flag){
 
         let flag1 = true;
@@ -250,6 +258,17 @@ function clearScreen(){
         number2 = "";
     }
     
+}
+
+function handleKeyDOwn(event){
+    
+    switch(event.key){
+        case "1":
+            calculatorButton.addEventListener("click", populateScreen);
+
+
+    }
+
 }
 
 
