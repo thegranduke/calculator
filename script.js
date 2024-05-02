@@ -222,10 +222,10 @@ function populateScreen(){
             flag1 = false
 
         }
-        if((screenIncludesOperand()) && (includesDecimalPoint(number1)) && flag1){
+        if((screenIncludesOperand()) && (includesDecimalPoint(number2)) && flag1){
             flag1 = false;
         }
-        if((screenIncludesOperand()) && !(includesDecimalPoint(number1)) && (screenContent != 0) && flag1){
+        if((screenIncludesOperand()) && !(includesDecimalPoint(number2)) && (screenContent != 0) && flag1){
             flag1 = false;
             number2 += clickedButton;
             calculatorScreen.textContent += clickedButton;
