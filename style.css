@@ -1,12 +1,16 @@
 
 body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #EFFBFF;
+    font-size: 20px;
+    
 }
 
 section {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top:5px;
 }
 
 .calculator{
@@ -21,6 +25,7 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    background-color: #395769;
 
 }
 
@@ -33,11 +38,16 @@ section {
 
 button{
     color: #171717;
-    background-color: #9D9D9D; 
+    background-color: #EFFBFF; 
     border: 2px solid #171717;
     border-radius: 7px;
     font-weight: bolder;
+    font-size: 15px;
     
+}
+
+button:hover{
+    color:white;
 }
 
 .word-button{
@@ -67,6 +77,10 @@ button{
     align-items: flex-end;
     flex-direction: column;
     font-size: 30px;
+    background-color: #EFFBFF;
+    color: #171717;
+    
+
 }
 
 .answers{
@@ -89,3 +103,23 @@ footer{
     font-weight: bolder;
     height:20px;
 }
+
+.word-button{
+    background-color: #ffaa32;
+}
+
+.number-button:hover{
+    color: red;
+}
+
+
+button[value="+"],
+button[value="-"],
+button[value="÷"],
+button[value="*"] {
+    background-color: #ffaa32;
+}
+button[value="%"]{
+    background-color: rgb(248, 106, 106);
+}
+
