@@ -43,7 +43,14 @@ function multiply(a,b){
 
 function divide(a,b){
     let quotient = a/b ;
-    return quotient;
+    if (b==0){
+        return "lmao"
+    }
+    else{
+        return quotient;
+
+    }
+    
 }
 
 
