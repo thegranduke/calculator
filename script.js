@@ -287,8 +287,22 @@ function handleKeyDOwn(event){
 
 
     value = event.key;
-    let clicked = document.querySelector(`[value="${value}"]`);
-    clicked.dispatchEvent(clickEvent);
+
+    if ( value == "Backspace"){
+        let clicked = document.querySelector(`[value="DELETE"]`);
+        clicked.dispatchEvent(clickEvent);
+    }
+    else if (value == "Delete"){
+        let clicked = document.querySelector(`[value="CLEAR"]`);
+        clicked.dispatchEvent(clickEvent);
+
+    }
+    else{
+        let clicked = document.querySelector(`[value="${value}"]`);
+        clicked.dispatchEvent(clickEvent);
+
+    }
+    
 
 }
 
