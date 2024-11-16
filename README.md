@@ -4,7 +4,7 @@ Welcome to **Calculator App**, a simple yet elegant web-based calculator that pe
 
 ---
 
-## 📜 Features
+## Features
 
 - **Interactive User Interface**
     
@@ -29,7 +29,7 @@ Welcome to **Calculator App**, a simple yet elegant web-based calculator that pe
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 - **HTML (`index.html`)**: The foundation of the calculator, defining the structure and layout.
 - **CSS (`style.css`)**: Handles the styling, giving the calculator its polished look.
@@ -37,7 +37,7 @@ Welcome to **Calculator App**, a simple yet elegant web-based calculator that pe
 
 ---
 
-## 🛠️ How It Works
+## How It Works
 
 ### HTML Structure
 
@@ -74,7 +74,7 @@ The JavaScript file (`script.js`) brings life to the calculator with:
 
 ---
 
-## 💻 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -92,13 +92,13 @@ To run this project, you'll need:
     ```
     
 
-**Navigate to the Project Folder**
+  **Navigate to the Project Folder**
 
 ```bash
 cd calculator-app
 ```
 
-**Open in a Browser**Double-click `index.html` or open it in your favorite browser.
+  **Open in a Browser**Double-click `index.html` or open it in your favorite browser.
 
 ---
 
@@ -127,7 +127,7 @@ cd calculator-app
 
 ---
 
-## 🚀 Advanced Features
+## Advanced Features
 
 - **Decimal Support**
     
