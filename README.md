@@ -87,9 +87,9 @@ To run this project, you'll need:
 
 1. **Clone the Repository**
     
-    ```bash
-    git clone https://github.com/thegranduke/calculator-app.git
-    ```
+```bash
+git clone https://github.com/thegranduke/calculator-app.git
+```
     
 
 2. **Navigate to the Project Folder**
