@@ -140,3 +140,5 @@ cd calculator-app
 - **Error Messages**
     
     Displays "lmao" for division by zero—because we all need a little humor in life!
+
+You can see it live [here](https://thegranduke.github.io/calculator/)
