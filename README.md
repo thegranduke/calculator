@@ -92,13 +92,13 @@ To run this project, you'll need:
     ```
     
 
-  **Navigate to the Project Folder**
+2. **Navigate to the Project Folder**
 
 ```bash
 cd calculator-app
 ```
 
-  **Open in a Browser**Double-click `index.html` or open it in your favorite browser.
+3. **Open in a Browser**Double-click `index.html` or open it in your favorite browser.
 
 ---
 
